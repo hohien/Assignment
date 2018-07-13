@@ -14,6 +14,7 @@ const ArtistHeader =(props)=>{
         container,
         avatar,
         title,
+        price,
         contentContainer,
         describe
     } = styles;
@@ -23,13 +24,22 @@ const ArtistHeader =(props)=>{
             activeOpacity={0.8} 
             onPress = {props.onPress}>
             <View style={container}>
-                <Image 
-                    style ={avatar}
-                    source={{uri:`${props.artistAvatar}`}} />
+                
+                    <Image 
+                        style ={avatar}
+                        source={{uri:`${props.artistAvatar}`}} />
+        
+                
                 <View style={contentContainer}>
-                    <Text style ={title}>{props.artistName}</Text>
-                    <Text style = {describe}>{props.artistDescribe}</Text>
+                    <Text style ={title} numberOfLines={1} ellipsizeMode="tail">{props.artistName}</Text>
+                    <Text style = {describe} numberOfLines={1}  ellipsizeMode="tail">{props.artistDescribe}</Text>
                 </View>
+                
+                    <Text style ={price}>
+                        {props.artistPrice} VND 
+                    </Text>
+               
+                 
             </View>
         </TouchableOpacity>
     );
@@ -47,6 +57,7 @@ const styles= {
         flexDirection: 'row',
     },
     contentContainer:{
+        flex:1,
         marginLeft: 16,
         justifyContent:'center',
         alignItems:'flex-start',
@@ -62,6 +73,10 @@ const styles= {
         width:40,
         height:40,
         resizeMode:'cover',
+    },
+    price:{
+        width:100,
+        paddingLeft: 8,
     }
 }
 

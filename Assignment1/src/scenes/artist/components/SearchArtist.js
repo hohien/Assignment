@@ -15,14 +15,19 @@ class SearchArtist extends Component {
     _onChangeText  = (text)  =>{
         this.props.onQueryArtist(text);
     }
+
+    componentDidMount(){
+        this.props.onQueryArtist("");
+    }
+    
     render(){
         const {containerStyle,inputStyle,inputContainer} = styles;
         return (
 
                 <SearchBar
                     clearIcon
+                    lightTheme
                     containerStyle = {containerStyle}
-                    
                     value = {this.props.query}
                     onChangeText = {this._onChangeText}
                     inputStyle ={inputStyle}
@@ -38,17 +43,17 @@ const styles=StyleSheet.create( {
         marginLeft: 8,
         marginRight: 8,
         flex:1,
-        justifyContent: 'flex-start',
-        backgroundColor:"transparent",
-        paddingTop: 8,
+        backgroundColor:"white"
+   
     },
     inputStyle:{
         fontSize:14,
-        backgroundColor:"transparent",
+        backgroundColor:"white"
     },
     inputContainer:{ 
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor:"white"
     }
     
 });

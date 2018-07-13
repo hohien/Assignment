@@ -8,3 +8,10 @@ export const SearchArtistAction = (query) =>{
         query: query.trim().toLowerCase()
     }
 }
+
+export const FilterArtistAction = (filterType, filterArtistIndex) =>{
+    return {
+        type:filterType,
+        filterArtistIndex
+    }
+}

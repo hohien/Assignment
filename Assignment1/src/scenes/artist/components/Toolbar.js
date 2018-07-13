@@ -27,8 +27,8 @@ const styles= {
         ...Platform.select({
             ios:{
                 shadowColor: '#000',
-                shadowOffset: { width: 0, height: 4 },
-                shadowOpacity: 0.6,
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.5,
                 shadowRadius: 2,  
             },
             android:{
@@ -41,7 +41,9 @@ const styles= {
         marginLeft:8,
         marginRight: 8,
         paddingLeft: 16,
-        height: Platform.OS === "ios" ? Dimens.height_toolbar + 20 : Dimens.height_toolbar,
+        marginBottom: 8,
+        marginTop: Platform.OS === "ios" ? 20 : 0,
+        height: Dimens.height_toolbar,
         backgroundColor:Colors.gray50,
         alignItems: 'center',
     },

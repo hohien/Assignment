@@ -8,14 +8,14 @@ import {
 import Colors from '../../values/Colors';
 
 import Toolbar from './components/Toolbar'; 
-
+import ArtistFilterGroup from './components/ArtistFilterGroup';
 import ArtistFlatList from './components/ArtistFlatList';
 
 class ArtistScreen extends Component{
     
 
     render(){
-
+        
         const {container} = styles;
         
         return(
@@ -24,7 +24,8 @@ class ArtistScreen extends Component{
 
                 <Toolbar title = {"Hello"} />
                 <ArtistFlatList />
- 
+                <ArtistFilterGroup  />
+                
             </View>
         );
     }

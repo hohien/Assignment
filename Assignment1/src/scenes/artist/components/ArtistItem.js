@@ -26,6 +26,7 @@ export default class ArtistItem extends Component {
                     artistName = {this.props.data.title}
                     artistDescribe ={this.props.data.artist}
                     artistAvatar = {this.props.data.thumbnail_image}
+                    artistPrice = {this.props.data.price}
                 />
 
                 <View
@@ -101,7 +102,7 @@ const styles= {
         marginBottom:4 ,
         marginLeft: 8,
         marginRight: 8,
-        backgroundColor:'transparent',
+        backgroundColor:'white',
         borderColor: Colors.blue500,
         borderWidth: 1,
         borderRadius: 5,

@@ -60,11 +60,10 @@ class ArtistFlatList extends Component{
 const styles = StyleSheet.create(
     {
         container:{
-            flex: 1,
+            flex: 100,
             backgroundColor:Colors.bgColor,
         },
         flatList:{
-            marginTop: 8,
             flex:1
         }
     }
