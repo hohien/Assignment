@@ -22,9 +22,8 @@ class ArtistScreen extends Component{
             
             <View style= {container}>
 
-                <Toolbar title = {"Hello"} />
+                
                 <ArtistFlatList />
-                <ArtistFilterGroup  />
                 
             </View>
         );

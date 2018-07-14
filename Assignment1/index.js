@@ -1,15 +1,17 @@
 import { AppRegistry } from 'react-native';
 import React from 'react';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import ArtistScreen from './src/scenes/artist/ArtistScreen';
 
 
 import reducer from './src/reducers/index';
+import thunk from 'redux-thunk';
 
+const store = createStore(reducer,applyMiddleware(thunk));
 const App =()=>{
     return (
-        <Provider store={createStore(reducer)}>
+        <Provider store={store}>
             <ArtistScreen />
         </Provider>
     );

@@ -60,7 +60,7 @@ const styles=StyleSheet.create( {
 
 function mapStateToProps(state){
     return {
-        query:state.SearchArtistReducer.queryArtist
+        query:state.searchQuery
     };
 }
 function mapDispatchToProps(dispatch) {

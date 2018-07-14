@@ -26,7 +26,7 @@ export default class ArtistItem extends Component {
                     artistName = {this.props.data.title}
                     artistDescribe ={this.props.data.artist}
                     artistAvatar = {this.props.data.thumbnail_image}
-                    artistPrice = {this.props.data.price}
+                    //artistPrice = {this.props.data.price}
                 />
 
                 <View

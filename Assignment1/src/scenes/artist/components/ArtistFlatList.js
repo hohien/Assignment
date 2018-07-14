@@ -13,7 +13,7 @@ import Colors from '../../../values/Colors';
 import ArtistItem from './ArtistItem';
 
 import {connect} from 'react-redux';
-
+import {fetchingArtist}from '../../../actions/index';
 class ArtistFlatList extends Component{
 
     _onPressItem =(data,index) =>{
@@ -37,6 +37,9 @@ class ArtistFlatList extends Component{
         />
     );
 
+    componentDidMount(){
+        this.props.fetchingArtist();
+    }
     render(){
 
         const {container,flatList} = styles;
@@ -70,8 +73,9 @@ const styles = StyleSheet.create(
 );
 
 function mapStateToProps(state){
+
     return {
-        artistData:state.ArtistDataReducer.artistFilter
+        artistData:state.artistdata.artistData
     }
 }
-export default connect(mapStateToProps)(ArtistFlatList);
+export default connect(mapStateToProps,{fetchingArtist})(ArtistFlatList);

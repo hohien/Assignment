@@ -74,7 +74,7 @@ const styles = StyleSheet.create(
 function mapStateToProps(state){
     console.log(`selectedIndex: ${state.SelectedIndexFilter}`);
     return {
-        selectedIndex:state.SelectedIndexFilter.selectedIndexFilter
+        selectedIndex:state.selectedIndexFilter
         
     }
 }

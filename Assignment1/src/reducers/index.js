@@ -1,9 +1,9 @@
-import {ArtistDataReducer,SearchArtistReducer,SelectedIndexFilter} from './ArtistReducer';
+import {artistDataReducer,searchArtistReducer,selectedIndexFilter} from './ArtistReducer';
 
 import {combineReducers} from 'redux';
 
 export default combineReducers({
-    ArtistDataReducer,
-    SearchArtistReducer,
-    SelectedIndexFilter,
+    artistdata: artistDataReducer,
+    searchQuery: searchArtistReducer,
+    selectedIndexFilter: selectedIndexFilter,
 });

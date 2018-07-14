@@ -1,14 +1,29 @@
-import ArtistData from '../scenes/artist/data/Data.json';
+
 import TypeAction from '../actions/TypeAction';
 import {_} from 'lodash';
 
 const defaultArtistData = {
-    artistData: ArtistData,
+    artistData: [],
     artistFilter: []
 }
 
-export const ArtistDataReducer = (state = defaultArtistData, action) =>{
+export const artistDataReducer = (state = defaultArtistData, action) =>{
+   
     switch(action.type){
+
+        case TypeAction.FETCHING_USERS_SUCCESS:{
+            console.log(action.artistData);
+            return {
+                artistData:action.artistData,
+                artistFilter:[]
+            }
+        }
+        case TypeAction.FETCHING_USERS_FAILURE:{
+            return {
+                artistData:[],
+                artistFilter:[]
+            }
+        }
         case TypeAction.SEARCH_ARTIST:{
             return {
                 ...state,
@@ -61,14 +76,15 @@ export const ArtistDataReducer = (state = defaultArtistData, action) =>{
 
 }
 
-export const SearchArtistReducer =(state = {queryArtist:""}, action)=>{
-        return {
-            queryArtist: action.query
-        }
+
+
+export const searchArtistReducer =(state = "", action)=>{
+    if (action.stype === TypeAction.SEARCH_ARTIST)
+        return action.query;
+        
+        return state;
 }
 
-export const SelectedIndexFilter =(state = {selectedIndexFilter:0}, action)=>{
-    return {
-        selectedIndexFilter:action.filterArtistIndex
-    }
+export const selectedIndexFilter =(state = 0, action)=>{
+    return !action.filterArtistIndex?state:action.filterArtistIndex;
 }

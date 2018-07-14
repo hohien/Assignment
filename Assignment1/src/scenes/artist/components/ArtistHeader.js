@@ -35,9 +35,9 @@ const ArtistHeader =(props)=>{
                     <Text style = {describe} numberOfLines={1}  ellipsizeMode="tail">{props.artistDescribe}</Text>
                 </View>
                 
-                    <Text style ={price}>
+                    {/* <Text style ={price}>
                         {props.artistPrice} VND 
-                    </Text>
+                    </Text> */}
                
                  
             </View>
